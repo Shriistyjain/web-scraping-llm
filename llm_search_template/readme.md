@@ -1,69 +1,67 @@
-LLM-based RAG Search System
-Overview
-This project is a Retrieval-Augmented Generation (RAG) system that retrieves content from the internet, processes it, and uses a Large Language Model (LLM) to generate responses. It consists of:
+# **LLM-based RAG Search System**
 
-Backend: A Flask API that retrieves web content, processes it, and generates responses using GPT-4.
-Front End: A Streamlit app for user interaction.
-Features
-Fetches relevant web pages using the Serper API.
-Processes content to extract meaningful text.
-Generates responses using OpenAI's GPT-4.
-Provides an interactive interface for queries.
-Technologies Used
-Backend: Flask, Requests, BeautifulSoup, OpenAI API
-Front End: Streamlit
-Utilities: dotenv for managing API keys.
-Setup Instructions
-Clone the Repository:
+## **Overview**
+
+This project is a **Retrieval-Augmented Generation (RAG)** system that retrieves content from the internet, processes it, and uses a **Large Language Model (LLM)** to generate responses. It consists of:
+
+- **Backend**: A Flask API that retrieves web content, processes it, and generates responses using GPT-4.
+- **Front End**: A Streamlit app for user interaction.
+
+---
+
+## **Features**
+
+- Fetches relevant web pages using the Serper API.
+- Processes content to extract meaningful text.
+- Generates responses using OpenAI's GPT-4.
+- Provides an interactive interface for queries.
+
+---
+
+## **Technologies Used**
+
+- **Backend**: Flask, Requests, BeautifulSoup, OpenAI API
+- **Front End**: Streamlit
+- **Utilities**: dotenv for managing API keys.
+
+---
+
+## **Setup Instructions**
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd project-folder
+2. Set Up Environment
+Create and activate a virtual environment:
+
 bash
 Copy code
-git clone <repository-url>
-cd project-folder
-Set Up Environment:
-bash
-Copy code
+# On Linux/Mac
 python -m venv env
-source env/bin/activate   # On Linux/Mac
-env\Scripts\activate      # On Windows
-pip install -r requirements.txt
-Add API Keys: Create a .env file:
-makefile
+source env/bin/activate
+
+# On Windows
+python -m venv env
+env\Scripts\activate
+Install the required dependencies:
+
+bash
 Copy code
+pip install -r requirements.txt
+3. Add API Keys
+Create a .env file in the root directory and add the following:
+
 SERPER_API_KEY=<your-serper-api-key>
 OPENAI_API_KEY=<your-openai-api-key>
-Run the Applications:
-Start Flask backend:
-bash
-Copy code
+4. Run the Applications
+Backend: Start the Flask app:
+
+
 python app.py
-Start Streamlit front end:
-bash
-Copy code
+The backend will be available at http://localhost:5001.
+
+Front End: Start the Streamlit app:
+
 streamlit run frontend_app.py
-Usage
-Open the Streamlit app in your browser.
-Input a query (e.g., "Benefits of electric vehicles").
-The system:
-Retrieves relevant articles.
-Processes their content.
-Generates a response using GPT-4.
-View the generated answer.
-Project Structure
-bash
-Copy code
-📂 project-folder/
-├── 📄 app.py            # Flask backend
-├── 📄 utils.py          # Utility functions
-├── 📄 frontend_app.py   # Streamlit app
-├── 📄 requirements.txt  # Dependencies
-├── 📄 .env              # API keys
-└── 📄 README.md         # Documentation
-Example Workflow
-Query: "What are the benefits of electric vehicles?"
-System retrieves and processes articles.
-GPT-4 generates a response.
-Answer is displayed in the Streamlit interface.
-Future Enhancements
-Add chatbot memory using LangChain.
-Optimize search results.
-Deploy on cloud platforms like Render or Streamlit Cloud.
+The front end will be available at http://localhost:8501.
